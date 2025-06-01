@@ -1,0 +1,1 @@
+const a={"carousel-image":"_carousel-image_makrs_1","carousel-caption":"_carousel-caption_makrs_14","carousel-caption-content":"_carousel-caption-content_makrs_26","carousel-item-dark":"_carousel-item-dark_makrs_33","carousel-item-light":"_carousel-item-light_makrs_37"};export{a as s};
