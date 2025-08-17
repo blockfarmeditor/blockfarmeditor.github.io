@@ -74,6 +74,14 @@ Block Farm Editor
 <span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn-close"</span><span style="color:#B392F0"> data-bs-dismiss</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"alert"</span><span style="color:#B392F0"> aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Close"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h4 id="limit-available-blocks-for-selection">Limit available blocks for selection.</h4>
+<p>Pass an <code>IEnumerable&#x3C;string></code> to <code>allowed-blocks</code> to limit the types available for selection on that specific block.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">@{ </span></span>
+<span class="line"><span style="color:#E1E4E8">    IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#FDAEB7;font-style:italic">string</span><span style="color:#E1E4E8">></span><span style="color:#E1E4E8"> allowedBlocks = ["blockfarmeditor.bootstrap-row"];</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"main-content"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">block-area</span><span style="color:#B392F0"> identifier</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"container"</span><span style="color:#B392F0"> allowed-blocks</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"@allowedBlocks"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">block-area</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
 <h3 id="setup-the-block-definition">Setup the Block Definition</h3>
 <p>Go back to the Block’s Element Type.
 Switch to the Definition tab in order to setup the Block Definition.
