@@ -1,9 +1,10 @@
 <!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.8.0"><title>Bootstrap Row | Block Farm Editor</title><meta name="description" content="How to create a Bootstrap row Block in Umbraco Block Farm Editor."><link rel="stylesheet" href="/_astro/Layout.537fc7ee.css">
-<link rel="stylesheet" href="/_astro/about.cf4b77bc.css"></head> <body> <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark"> <div class="container"> <a class="navbar-brand" href="/"> <img src="/_astro/logo.D9vSspXG.svg" alt="Logo" width="40" height="40" class="d-inline-block align-text-center">
+<link rel="stylesheet" href="/_astro/about.77a3ee4e.css"></head> <body> <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark"> <div class="container"> <a class="navbar-brand" href="/"> <img src="/_astro/logo.D9vSspXG_Z1fdg8v.svg" alt="Logo" width="40" height="40" loading="lazy" decoding="async" class="d-inline-block align-text-center">
 Block Farm Editor
-</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarNav"> <ul class="navbar-nav"> <li class="nav-item"> <a class="nav-link " href="/">Home</a> </li> <li class="nav-item"> <a class="nav-link active" href="/readme/">ReadMe</a> <ul class="nav-menu"> <li class="nav-item"> <a class="nav-link active" href="/readme/bootstrap-row/">Bootstrap Row</a> </li> </ul> </li> <li class="nav-item"> <a class="nav-link " href="/pricing/">Pricing</a> <ul class="nav-menu"> <li class="nav-item"> <a class="nav-link " href="/pricing/licensing/">Licensing</a> </li> </ul> </li> <li class="nav-item"> <a class="nav-link " href="/about/">About Me</a> <ul class="nav-menu"> <li class="nav-item"> <a class="nav-link " href="/about/contactus/">Contact Me</a> </li> </ul> </li> </ul> </div> </div> </nav>  <div class="container mb-3 mt-5"> <div class="row"> <div class="col-md-12"> <div class="card"> <div class="card-body"> <h1 id="creating-a-bootstrap-grid">Creating a Bootstrap Grid.</h1>
+</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarNav"> <ul class="navbar-nav"> <li class="nav-item"> <a class="nav-link " href="/">Home</a> </li> <li class="nav-item"> <a class="nav-link active" href="/readme/">ReadMe</a> <ul class="nav-menu"> <li class="nav-item"> <a class="nav-link active" href="/readme/bootstrap-row/">Bootstrap Row</a> </li> <li class="nav-item"> <a class="nav-link " href="/readme/import-export/">Import/Export</a> </li> </ul> </li> <li class="nav-item"> <a class="nav-link " href="/pricing/">Pricing</a> <ul class="nav-menu"> <li class="nav-item"> <a class="nav-link " href="/pricing/licensing/">Licensing</a> </li> </ul> </li> <li class="nav-item"> <a class="nav-link " href="/about/">About Me</a> <ul class="nav-menu"> <li class="nav-item"> <a class="nav-link " href="/about/contactus/">Contact Me</a> </li> </ul> </li> </ul> </div> </div> </nav>  <div class="container mb-3 mt-5"> <div class="row"> <div class="col-md-12"> <div class="card"> <div class="card-body"> <h1 id="creating-a-bootstrap-grid">Creating a Bootstrap Grid.</h1>
 <p>The grid will be componsed of a block list for the columns and a few other fields as well.</p>
 <p>The block list and an element type will be used to make the column creation dynamic.</p>
+<hr>
 <h2 id="creating-the-column-element-type">Creating the column element type.</h2>
 <p>The column element type will be created with 4 fields.</p>
 <ol>
@@ -55,89 +56,11 @@ It will contain the following options.</p>
 </li>
 </ol>
 <p>Our element type is completed.  Feel free to add more properties for the column as needed.</p>
+<hr>
 <h2 id="next-we-create-and-register-the-row-block">Next we create and register the Row Block</h2>
-<p>We need two files for that.  A <strong>Row.cshtml</strong> and a <strong>RowProperties.cs</strong> file.</p>
-<p>The <strong>RowProperties.cs</strong> file will have the contents.</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="csharp"><code><span class="line"><span style="color:#F97583">using</span><span style="color:#B392F0"> BlockFarmEditor</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Components</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Blocks</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">BootstrapGrid</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">using</span><span style="color:#B392F0"> BlockFarmEditor</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">RCL</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Library</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Attributes</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">using</span><span style="color:#B392F0"> BlockFarmEditor</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">RCL</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Models</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">BuilderModels</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">using</span><span style="color:#B392F0"> BlockFarmEditor</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">RCL</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Models</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ConfigModels</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">using</span><span style="color:#B392F0"> BlockFarmEditor</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Umbraco</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Models</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"><span style="color:#F97583">using</span><span style="color:#B392F0"> Umbraco</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Cms</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Core</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Models</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Blocks</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#F97583">assembly</span><span style="color:#E1E4E8">: </span><span style="color:#B392F0">BlockFarmEditorContainer</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"blockfarmeditor.bootstrap-row"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Row"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">ViewPath</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "~/Components/Blocks/BootstrapGrid/Row.cshtml"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">Icon</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "folder"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">PropertiesType</span><span style="color:#F97583"> =</span><span style="color:#F97583"> typeof</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">RowProperties</span><span style="color:#E1E4E8">))]</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">namespace</span><span style="color:#B392F0"> BlockFarmEditor</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Components</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Blocks</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">BootstrapGrid</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> RowProperties</span><span style="color:#E1E4E8"> : </span><span style="color:#B392F0">IBuilderProperties</span></span>
-<span class="line"><span style="color:#E1E4E8">{</span></span>
-<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#B392F0">BlockFarmEditorDataType</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Dropdown"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Prefix"</span><span style="color:#E1E4E8">)]</span></span>
-<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#B392F0">BlockFarmEditorDataTypeConfig</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">typeof</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">PrefixRowPropertiesConfig</span><span style="color:#E1E4E8">))]</span></span>
-<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> string</span><span style="color:#B392F0"> Prefix</span><span style="color:#E1E4E8"> { </span><span style="color:#F97583">get</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">set</span><span style="color:#E1E4E8">; } </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "col-md"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#B392F0">BlockFarmEditorDataType</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"BlockList"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Columns"</span><span style="color:#E1E4E8">)]</span></span>
-<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> BlockListModel</span><span style="color:#B392F0"> Columns</span><span style="color:#E1E4E8"> { </span><span style="color:#F97583">get</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">set</span><span style="color:#E1E4E8">; } </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BlockListModel</span><span style="color:#E1E4E8">([]);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#B392F0">BlockFarmEditorDataType</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Dropdown"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Row Direction"</span><span style="color:#E1E4E8">)]</span></span>
-<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#B392F0">BlockFarmEditorDataTypeConfig</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">typeof</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">DirectionRowPropertiesConfig</span><span style="color:#E1E4E8">))]</span></span>
-<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> string</span><span style="color:#B392F0"> RowDirection</span><span style="color:#E1E4E8"> { </span><span style="color:#F97583">get</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">set</span><span style="color:#E1E4E8">; } </span><span style="color:#F97583">=</span><span style="color:#F97583"> string</span><span style="color:#E1E4E8">.Empty;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E1E4E8">    [</span><span style="color:#B392F0">BlockFarmEditorDataType</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Textsring"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Row Custom Class"</span><span style="color:#E1E4E8">)]</span></span>
-<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> string</span><span style="color:#B392F0"> RowCustomCss</span><span style="color:#E1E4E8"> { </span><span style="color:#F97583">get</span><span style="color:#E1E4E8">; </span><span style="color:#F97583">set</span><span style="color:#E1E4E8">; } </span><span style="color:#F97583">=</span><span style="color:#F97583"> string</span><span style="color:#E1E4E8">.Empty;</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> PrefixRowPropertiesConfig</span><span style="color:#E1E4E8"> : </span><span style="color:#B392F0">IBlockFarmEditorConfig</span></span>
-<span class="line"><span style="color:#E1E4E8">{</span></span>
-<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> async</span><span style="color:#B392F0"> Task</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">BlockFarmEditorConfigItem</span><span style="color:#E1E4E8">>> </span><span style="color:#B392F0">GetItems</span><span style="color:#E1E4E8">()</span></span>
-<span class="line"><span style="color:#E1E4E8">    {</span></span>
-<span class="line"><span style="color:#F97583">        return</span></span>
-<span class="line"><span style="color:#E1E4E8">        [</span></span>
-<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
-<span class="line"><span style="color:#E1E4E8">            {</span></span>
-<span class="line"><span style="color:#E1E4E8">                Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "items"</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#6A737D">                // Generate a list of name,value pairs for the dropdown items</span></span>
-<span class="line"><span style="color:#E1E4E8">                Value </span><span style="color:#F97583">=new</span><span style="color:#B392F0"> List</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">DropdownEditorConfigItem</span><span style="color:#E1E4E8">>() {</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Extra Small (0px to 575px)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col"</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Small (576px to 767px)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-sm"</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Medium (768px to 991px)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-md"</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Large (992px to 1199px)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-lg"</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Extra Large (1200px to 1399px)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-xl"</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Extra extra large (1400px)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-xxl"</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#E1E4E8">                }</span></span>
-<span class="line"><span style="color:#E1E4E8">            },</span></span>
-<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
-<span class="line"><span style="color:#E1E4E8">            {</span></span>
-<span class="line"><span style="color:#E1E4E8">                Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "multiple"</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">                Value </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#6A737D"> // Assuming single selection for this example</span></span>
-<span class="line"><span style="color:#E1E4E8">            }</span></span>
-<span class="line"><span style="color:#E1E4E8">        ];</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> DirectionRowPropertiesConfig</span><span style="color:#E1E4E8"> : </span><span style="color:#B392F0">IBlockFarmEditorConfig</span></span>
-<span class="line"><span style="color:#E1E4E8">{</span></span>
-<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> async</span><span style="color:#B392F0"> Task</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">BlockFarmEditorConfigItem</span><span style="color:#E1E4E8">>> </span><span style="color:#B392F0">GetItems</span><span style="color:#E1E4E8">()</span></span>
-<span class="line"><span style="color:#E1E4E8">    {</span></span>
-<span class="line"><span style="color:#F97583">        return</span></span>
-<span class="line"><span style="color:#E1E4E8">        [</span></span>
-<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
-<span class="line"><span style="color:#E1E4E8">            {</span></span>
-<span class="line"><span style="color:#E1E4E8">                Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "items"</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#6A737D">                // Generate a list of name,value pairs for the dropdown items</span></span>
-<span class="line"><span style="color:#E1E4E8">                Value </span><span style="color:#F97583">=new</span><span style="color:#B392F0"> List</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">DropdownEditorConfigItem</span><span style="color:#E1E4E8">>() {</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Left to Right"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">),</span></span>
-<span class="line"><span style="color:#F97583">                    new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Right to Left"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"flex-row-reverse"</span><span style="color:#E1E4E8">)</span></span>
-<span class="line"><span style="color:#E1E4E8">                }</span></span>
-<span class="line"><span style="color:#E1E4E8">            },</span></span>
-<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
-<span class="line"><span style="color:#E1E4E8">            {</span></span>
-<span class="line"><span style="color:#E1E4E8">                Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "multiple"</span><span style="color:#E1E4E8">,</span></span>
-<span class="line"><span style="color:#E1E4E8">                Value </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#6A737D"> // Assuming single selection for this example</span></span>
-<span class="line"><span style="color:#E1E4E8">            }</span></span>
-<span class="line"><span style="color:#E1E4E8">        ];</span></span>
-<span class="line"><span style="color:#E1E4E8">    }</span></span>
-<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
-<p>The View <strong>Row.cshtml</strong> will have the following contents.</p>
+<p>To do that we will create a partial view, create an element type and define the connection between the two.</p>
+<h3 id="partial-view">Partial View</h3>
+<p>First we need the partial view.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">@using BlockFarmEditor.Components.Blocks.BootstrapGrid</span></span>
 <span class="line"><span style="color:#E1E4E8">@model RowProperties</span></span>
 <span class="line"></span>
@@ -191,4 +114,79 @@ It will contain the following options.</p>
 <span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
 <span class="line"><span style="color:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h3 id="create-the-block-element-type">Create the Block Element Type</h3>
+<p>Next we create the block element type.
+<img  src="/_astro/bootstrap-row-block.BnV2B2xK_Z25lBm9.webp" alt="Bootstrap Row Block" width="1555" height="860" loading="lazy" decoding="async"></p>
+<p><strong>(Optional)</strong> You may optionally fill the dropdown datatypes from the backend with dynamic content if you want.  Otherwise, setup the dropdowns as you normally would with seperate configurations.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="csharp"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#F97583">assembly</span><span style="color:#E1E4E8">: </span><span style="color:#B392F0">BlockFarmEditorConfiguration</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bootstrapRow"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"prefix"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">typeof</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">RowPrefixConfig</span><span style="color:#E1E4E8">))]</span></span>
+<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#F97583">assembly</span><span style="color:#E1E4E8">: </span><span style="color:#B392F0">BlockFarmEditorConfiguration</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bootstrapRow"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"rowDirection"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">typeof</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">RowDirectionConfig</span><span style="color:#E1E4E8">))]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">namespace</span><span style="color:#B392F0"> MyNamespace</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> RowPrefixConfig</span><span style="color:#E1E4E8"> : </span><span style="color:#B392F0">IBlockFarmEditorConfig</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /// &#x3C;</span><span style="color:#85E89D">summary</span><span style="color:#6A737D">></span></span>
+<span class="line"><span style="color:#6A737D">    /// Returns a list of Bootstrap tab justification options for dropdowns.</span></span>
+<span class="line"><span style="color:#6A737D">    /// This is used for configuring the alignment of tabs in the Block Farm Editor.</span></span>
+<span class="line"><span style="color:#6A737D">    /// &#x3C;/</span><span style="color:#85E89D">summary</span><span style="color:#6A737D">></span></span>
+<span class="line"><span style="color:#6A737D">    /// &#x3C;</span><span style="color:#85E89D">returns</span><span style="color:#6A737D">>&#x3C;/</span><span style="color:#85E89D">returns</span><span style="color:#6A737D">></span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> Task</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">BlockFarmEditorConfigItem</span><span style="color:#E1E4E8">>> </span><span style="color:#B392F0">GetItems</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span></span>
+<span class="line"><span style="color:#E1E4E8">        Task.</span><span style="color:#B392F0">FromResult</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">BlockFarmEditorConfigItem</span><span style="color:#E1E4E8">>>([</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#E1E4E8">                Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "items"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                Value </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> List</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">DropdownEditorConfigItem</span><span style="color:#E1E4E8">>() {</span></span>
+<span class="line"><span style="color:#F97583">                new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Extra Small (xs)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">                new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Small (sm)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-sm"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">                new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Medium (md)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-md"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">                new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Large (lg)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-lg"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">                new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Extra Large (xl)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-xl"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">                new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Extra Extra Large (xxl)"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"col-xxl"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">                }</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#E1E4E8">                Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "multiple"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                Value </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> RowDirectionConfig</span><span style="color:#E1E4E8"> : </span><span style="color:#B392F0">IBlockFarmEditorConfig</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /// &#x3C;</span><span style="color:#85E89D">summary</span><span style="color:#6A737D">></span></span>
+<span class="line"><span style="color:#6A737D">    /// Returns a list of Bootstrap tab justification options for dropdowns.</span></span>
+<span class="line"><span style="color:#6A737D">    /// This is used for configuring the alignment of tabs in the Block Farm Editor.</span></span>
+<span class="line"><span style="color:#6A737D">    /// &#x3C;/</span><span style="color:#85E89D">summary</span><span style="color:#6A737D">></span></span>
+<span class="line"><span style="color:#6A737D">    /// &#x3C;</span><span style="color:#85E89D">returns</span><span style="color:#6A737D">>&#x3C;/</span><span style="color:#85E89D">returns</span><span style="color:#6A737D">></span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> Task</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">BlockFarmEditorConfigItem</span><span style="color:#E1E4E8">>> </span><span style="color:#B392F0">GetItems</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#F97583">        return</span></span>
+<span class="line"><span style="color:#E1E4E8">        Task.</span><span style="color:#B392F0">FromResult</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">IEnumerable</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">BlockFarmEditorConfigItem</span><span style="color:#E1E4E8">>>([</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#E1E4E8">            Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "items"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            Value </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> List</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">DropdownEditorConfigItem</span><span style="color:#E1E4E8">>() {</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Row"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"flex-row"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Row Reverse"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"flex-row-reverse"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Column"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"flex-column"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Column Reverse"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"flex-column-reverse"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#F97583">            new</span><span style="color:#E1E4E8"> ()</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#E1E4E8">            Alias </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "multiple"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            Value </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h3 id="fill-out-definition">Fill out Definition</h3>
+<p>Last step is to setup the definition hooking up the partial view to the block.
+<img  src="/_astro/bootstrap-row-definition.B8ugv8Ab_13tgWz.webp" alt="Bootstrap Row Block" width="1557" height="845" loading="lazy" decoding="async"></p>
 <p>Your block is now ready for use.</p> </div> </div> </div> </div> </div>  <div class="container"> <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> <p class="col-12 col-md-4 mb-0 text-body-secondary">© 2025 BlockFarmEditor</p> <ul class="nav col-12 col-md justify-content-start justify-content-md-end"> <li class="nav-item"> <a href="/" class="nav-link px-2 text-body-secondary">Home</a> </li> <li class="nav-item"> <a href="/readme" class="nav-link px-2 text-body-secondary">ReadMe</a> </li> <li class="nav-item"> <a href="/pricing" class="nav-link px-2 text-body-secondary">Pricing</a> </li> <li class="nav-item"> <a href="/about" class="nav-link px-2 text-body-secondary">About Me</a> </li> <li class="nav-item"> <a href="/terms/conditions" class="nav-link px-2 text-body-secondary">Terms & Conditions</a> </li> <li class="nav-item"> <a href="/terms/privacy" class="nav-link px-2 text-body-secondary">Privacy Policy</a> </li> </ul> </footer> </div> <!-- Back to top button --> <button type="button" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"></path> </svg> </button> <script type="module">let e=document.getElementById("btn-back-to-top");window.onscroll=function(){l()};function l(){document.body.scrollTop>20||document.documentElement.scrollTop>20?e.style.display="block":e.style.display="none"}e.addEventListener("click",d);function d(){document.body.scrollTop=0,document.documentElement.scrollTop=0}document.body.addEventListener("click",function(c){const o=c.target;if(o.matches(".astro-code *, .astro-code")){const t=o.classList.contains("astro-code")?o:o.closest(".astro-code"),n=t.textContent;navigator.clipboard.writeText(n).then(()=>{t.classList.add("copied"),setTimeout(()=>{t.classList.remove("copied")},2e3)}).catch(s=>{console.error("Failed to copy text: ",s)})}});</script> <script type="module" src="/_astro/Layout.astro_astro_type_script_index_1_lang.BVND8aHT.js"></script> <script type="module" src="/_astro/Layout.astro_astro_type_script_index_2_lang.DcDKe-7K.js"></script> </body> </html>
