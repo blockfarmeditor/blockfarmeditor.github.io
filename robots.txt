@@ -1,4 +1,7 @@
 User-agent: *
-Allow: /
+Disallow:
 
 Sitemap: https://blockfarmeditor.com/sitemap.xml
+
+# LLM-friendly site map (non-standard, informational):
+# https://blockfarmeditor.com/llms.txt
