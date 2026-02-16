@@ -26,16 +26,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blockfarmeditor.com/pricing/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blockfarmeditor.com/pricing/licensing/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://blockfarmeditor.com/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

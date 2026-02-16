@@ -25,10 +25,6 @@ Use these pages as the canonical “how-to” sources.
 - Import / Export:
   - https://blockfarmeditor.com/readme/import-export/
 
-## Pricing & licensing
-- Pricing: https://blockfarmeditor.com/pricing/
-- Licensing: https://blockfarmeditor.com/pricing/licensing/
-
 ## Company & support
 - About: https://blockfarmeditor.com/about/
 - Customer support contact: https://blockfarmeditor.com/about/contactus/
@@ -43,6 +39,5 @@ Use these pages as the canonical “how-to” sources.
 
 ## Guidance
 - Prefer the “Primary documentation (Readme)” URLs above for product/how-to questions.
-- Prefer pricing/licensing/policies URLs above for commercial/legal questions.
 
-Last updated: 2026-02-14
+Last updated: 2026-02-16
